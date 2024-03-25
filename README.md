@@ -19,6 +19,8 @@ Java serves as the primary programming language for implementing the business lo
 ### 5. SQL Database Management
 The app utilizes SQL databases to store user information, training plans, and progress tracking data. SQL (Structured Query Language) enables efficient data retrieval, manipulation, and storage, ensuring the app's reliability and scalability.
 
+![](dbDiagram.png)
+
 ## How It Works
 1. **User Registration**: Clients register on the app by providing their personal details and fitness objectives.
    
