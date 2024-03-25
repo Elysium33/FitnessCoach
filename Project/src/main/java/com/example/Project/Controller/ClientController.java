@@ -10,32 +10,50 @@ import com.example.Project.Service.ClientService;
 
 import java.util.List;
 
+/**
+ * Controller class to handle HTTP requests related to Client entities.
+ */
 @RestController
 @RequestMapping("/clients")
 public class ClientController {
 
     private final ClientService clientService;
 
+    /**
+     * Constructs a new ClientController with the specified ClientService.
+     * @param clientService The ClientService to be used.
+     */
     @Autowired
     public ClientController(ClientService clientService) {
         this.clientService = clientService;
     }
 
-    // Endpoint to get all clients
+    /**
+     * Retrieves all clients.
+     * @return ResponseEntity containing a list of all clients, or an empty list if none found.
+     */
     @GetMapping("/get")
     public ResponseEntity<List<Client>> getAllClients() {
         List<Client> clients = clientService.getAllClients();
         return new ResponseEntity<>(clients, HttpStatus.OK);
     }
 
-    // Endpoint to get a client by ID
+    /**
+     * Retrieves a client by ID.
+     * @param id The ID of the client to retrieve.
+     * @return ResponseEntity containing the client if found, or a 404 error if not found.
+     */
     @GetMapping("/getbyID/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable Long id) {
         Client client = clientService.getClientById(id);
         return client != null ? new ResponseEntity<>(client, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    // Endpoint to create a new client
+    /**
+     * Creates a new client.
+     * @param client The client object to be created.
+     * @return ResponseEntity containing the created client with HTTP status 201 (Created).
+     */
     @PostMapping("/save")
     @ResponseBody
     public ResponseEntity<Client> createClient(@RequestBody Client client) {
@@ -43,18 +61,26 @@ public class ClientController {
         return new ResponseEntity<>(savedClient, HttpStatus.CREATED);
     }
 
-    // Endpoint to update an existing client
+    /**
+     * Updates an existing client by ID.
+     * @param id The ID of the client to update.
+     * @param clientDetails The updated client details.
+     * @return ResponseEntity containing the updated client if found, or a 404 error if not found.
+     */
     @PutMapping("updatebyID/{id}")
     public ResponseEntity<Client> updateClient(@PathVariable Long id, @RequestBody Client clientDetails) {
         Client updatedClient = clientService.updateClient(id, clientDetails);
         return updatedClient != null ? new ResponseEntity<>(updatedClient, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    // Endpoint to delete a client
+    /**
+     * Deletes a client by ID.
+     * @param id The ID of the client to delete.
+     * @return ResponseEntity with no content and HTTP status 204 (No Content).
+     */
     @DeleteMapping("deletebyID/{id}")
     public ResponseEntity<Void> deleteClient(@PathVariable Long id) {
         clientService.deleteClient(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
-

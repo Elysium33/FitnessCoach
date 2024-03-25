@@ -1,0 +1,5 @@
+com.example.Project
+com.example.Project.Controller
+com.example.Project.Entity
+com.example.Project.Repository
+com.example.Project.Service
