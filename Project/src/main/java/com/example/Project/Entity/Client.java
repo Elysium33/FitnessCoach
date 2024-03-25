@@ -1,4 +1,4 @@
-package com.example.Entity;
+package com.example.Project.Entity;
 
 import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -81,5 +81,8 @@ public class Client {
         return trainingPlanID;
     }
 
+    public void setTrainingPlanID(Long trainingPlanID) {
+        this.trainingPlanID = trainingPlanID;
+    }
 }
 
