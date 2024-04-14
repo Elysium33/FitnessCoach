@@ -83,4 +83,15 @@ public class ClientController {
         clientService.deleteClient(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    /**
+     * Retrieves all clients without a training plan.
+     *
+     * @return ResponseEntity containing a list of clients with no training plan, or an empty list if none found.
+     */
+    @GetMapping("/getbyNoTraining")
+    public ResponseEntity<List<Client>> getClientsWithNoTrainingPlan() {
+        List<Client> clientsWithNoTrainingPlan = clientService.getClientsWithNoTrainingPlan();
+        return new ResponseEntity<>(clientsWithNoTrainingPlan, HttpStatus.OK);
+    }
 }

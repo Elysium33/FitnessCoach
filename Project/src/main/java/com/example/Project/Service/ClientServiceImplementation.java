@@ -1,5 +1,7 @@
 package com.example.Project.Service;
 
+import com.example.Project.ObserverService.AdminObserver;
+import com.example.Project.ObserverService.ClientObserver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.Project.Repository.ClientRepository;
@@ -15,6 +17,13 @@ public class ClientServiceImplementation implements ClientService {
 
     @Autowired
     private ClientRepository clientRepository;
+    private final List<ClientObserver> clientObservers;
+    private final List<AdminObserver> adminObservers;
+
+    public ClientServiceImplementation(List<ClientObserver> clientObservers, List<AdminObserver> adminObservers){
+        this.clientObservers = clientObservers;
+        this.adminObservers = adminObservers;
+    }
 
     /**
      * Retrieves all clients.
@@ -42,6 +51,7 @@ public class ClientServiceImplementation implements ClientService {
      */
     @Override
     public Client createClient(Client client) {
+        notifyClientObservers(client);
         return clientRepository.save(client);
     }
 
@@ -75,4 +85,26 @@ public class ClientServiceImplementation implements ClientService {
             clientRepository.delete(existingClient);
         }
     }
+
+    /**
+     * Retrieves all clients without a training plan.
+     *
+     * @return List of clients with no training plan.
+     */
+    public List<Client> getClientsWithNoTrainingPlan() {
+        return clientRepository.findByTrainingPlanID(-1L); // Assuming -1 indicates no training plan chosen
+    }
+
+    /**
+     * Notifies all client observers about a new client.
+     *
+     * @param client The newly created client.
+     */
+    private void notifyClientObservers(Client client) {
+        for (ClientObserver observer : clientObservers) {
+            observer.update(client);
+        }
+    }
+
+
 }
