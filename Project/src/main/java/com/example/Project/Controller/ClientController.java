@@ -83,4 +83,10 @@ public class ClientController {
         clientService.deleteClient(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @GetMapping("/getbyNoTraining")
+    public ResponseEntity<List<Client>> getClientsWithNoTrainingPlan() {
+        List<Client> clientsWithNoTrainingPlan = clientService.getClientsWithNoTrainingPlan();
+        return new ResponseEntity<>(clientsWithNoTrainingPlan, HttpStatus.OK);
+    }
 }

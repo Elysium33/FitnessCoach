@@ -86,11 +86,15 @@ public class ClientServiceImplementation implements ClientService {
         }
     }
 
+    public List<Client> getClientsWithNoTrainingPlan() {
+        return clientRepository.findByTrainingPlanId(-1L); // Assuming -1 indicates no training plan chosen
+    }
+
     private void notifyClientObservers(Client client){
         for(ClientObserver observer : clientObservers){
             observer.update(client);
         }
     }
 
-    
+
 }
