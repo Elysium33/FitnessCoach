@@ -86,12 +86,22 @@ public class ClientServiceImplementation implements ClientService {
         }
     }
 
+    /**
+     * Retrieves all clients without a training plan.
+     *
+     * @return List of clients with no training plan.
+     */
     public List<Client> getClientsWithNoTrainingPlan() {
         return clientRepository.findByTrainingPlanId(-1L); // Assuming -1 indicates no training plan chosen
     }
 
-    private void notifyClientObservers(Client client){
-        for(ClientObserver observer : clientObservers){
+    /**
+     * Notifies all client observers about a new client.
+     *
+     * @param client The newly created client.
+     */
+    private void notifyClientObservers(Client client) {
+        for (ClientObserver observer : clientObservers) {
             observer.update(client);
         }
     }

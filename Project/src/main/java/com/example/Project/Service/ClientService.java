@@ -42,5 +42,10 @@ public interface ClientService {
      */
     void deleteClient(Long id);
 
+    /**
+     * Retrieves all clients without a training plan.
+     *
+     * @return List of clients with no training plan.
+     */
     List<Client> getClientsWithNoTrainingPlan();
 }
