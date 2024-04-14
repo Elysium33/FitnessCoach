@@ -92,7 +92,7 @@ public class ClientServiceImplementation implements ClientService {
      * @return List of clients with no training plan.
      */
     public List<Client> getClientsWithNoTrainingPlan() {
-        return clientRepository.findByTrainingPlanId(-1L); // Assuming -1 indicates no training plan chosen
+        return clientRepository.findByTrainingPlanID(-1L); // Assuming -1 indicates no training plan chosen
     }
 
     /**

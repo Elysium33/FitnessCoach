@@ -17,6 +17,6 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
      * @param trainingPlanId The ID of the training plan.
      * @return A list of clients with the specified training plan ID.
      */
-    List<Client> findByTrainingPlanId(Long trainingPlanId);
+    List<Client> findByTrainingPlanID(Long trainingPlanID);
 
 }
