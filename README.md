@@ -19,7 +19,11 @@ Java serves as the primary programming language for implementing the business lo
 ### 5. SQL Database Management
 The app utilizes SQL databases to store user information, training plans, and progress tracking data. SQL (Structured Query Language) enables efficient data retrieval, manipulation, and storage, ensuring the app's reliability and scalability.
 
+
 ![](dbDiagram.png)
+
+### 6. Observer Pattern Implementation
+To enhance real-time updates and user engagement, the Fitness Coach App incorporates the Observer pattern. This design pattern enables efficient communication between components, allowing clients to receive instant notifications about any changes in their training plans, progress, or upcoming events. By implementing the Observer pattern, the app ensures that users stay informed and motivated throughout their fitness journey, fostering a dynamic and interactive experience. Additionally, administrators also benefit from the Observer pattern, receiving notifications about new client registrations, allowing them to efficiently manage user accounts and provide support as needed.
 
 ## How It Works
 1. **User Registration**: Clients register on the app by providing their personal details and fitness objectives.
