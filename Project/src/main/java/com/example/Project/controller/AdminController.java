@@ -1,11 +1,11 @@
-package com.example.Project.Controller;
+package com.example.Project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.Project.Entity.Admin;
-import com.example.Project.Service.AdminService;
+import com.example.Project.entity.Admin;
+import com.example.Project.service.AdminService;
 
 import java.util.List;
 

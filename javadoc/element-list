@@ -1,5 +1,6 @@
 com.example.Project
-com.example.Project.Controller
-com.example.Project.Entity
-com.example.Project.Repository
-com.example.Project.Service
+com.example.Project.controller
+com.example.Project.entity
+com.example.Project.observerService
+com.example.Project.repository
+com.example.Project.service

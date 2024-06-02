@@ -19,15 +19,37 @@ Java serves as the primary programming language for implementing the business lo
 ### 5. SQL Database Management
 The app utilizes SQL databases to store user information, training plans, and progress tracking data. SQL (Structured Query Language) enables efficient data retrieval, manipulation, and storage, ensuring the app's reliability and scalability.
 
-
 ![](dbDiagram.png)
 
 ### 6. Observer Pattern Implementation
 To enhance real-time updates and user engagement, the Fitness Coach App incorporates the Observer pattern. This design pattern enables efficient communication between components, allowing clients to receive instant notifications about any changes in their training plans, progress, or upcoming events. By implementing the Observer pattern, the app ensures that users stay informed and motivated throughout their fitness journey, fostering a dynamic and interactive experience. Additionally, administrators also benefit from the Observer pattern, receiving notifications about new client registrations, allowing them to efficiently manage user accounts and provide support as needed.
 
+### 7.Endpoints for Fitness Coach App
+The following endpoints are available for the Fitness Coach App:
+
+**Client Endpoints:**
+- GET /clients/get: Retrieve all clients.
+- GET /clients/getbyID/{id}: Retrieve a client by ID.
+- POST /clients/save: Create a new client.
+- PUT /clients/updatebyID/{id}: Update an existing client by ID.
+- DELETE /clients/deletebyID/{id}: Delete a client by ID.
+
+**Admin Endpoints:**
+- GET /admins/get: Retrieve all admins.
+- GET /admins/getbyID/{id}: Retrieve an admin by ID.
+- POST /admins/save: Create a new admin.
+- PUT /admins/updatebyID/{id}: Update an existing admin by ID.
+- DELETE /admins/deletebyID/{id}: Delete an admin by ID.
+
+**Training Plan Endpoints:**
+- GET /training-plans/get: Retrieve all training plans.
+- GET /training-plans/getbyID/{id}: Retrieve a training plan by ID.
+- POST /training-plans/save: Create a new training plan.
+- PUT /training-plans/updatebyID/{id}: Update an existing training plan by ID.
+- DELETE /training-plans/deletebyID/{id}: Delete a training plan by ID.
 ## How It Works
 1. **User Registration**: Clients register on the app by providing their personal details and fitness objectives.
-   
+
 2. **Objective Assessment**: The app conducts a thorough assessment of the user's fitness goals, current fitness level, and any specific requirements or restrictions.
 
 3. **Algorithmic Analysis**: Based on the assessment, the app employs algorithms to generate a personalized training plan tailored to the user's objectives, preferences, and constraints.
@@ -36,3 +58,5 @@ To enhance real-time updates and user engagement, the Fitness Coach App incorpor
 
 ## Conclusion
 The Fitness Coach App offers a comprehensive solution for individuals seeking personalized fitness guidance and training plans. By leveraging the power of Spring Boot, Java, and SQL, along with adherence to SOLID principles, the app provides a seamless and effective platform for achieving fitness goals.
+
+

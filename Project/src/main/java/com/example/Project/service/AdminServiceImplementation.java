@@ -1,10 +1,10 @@
-package com.example.Project.Service;
+package com.example.Project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.example.Project.Repository.AdminRepository;
-import com.example.Project.Entity.Admin;
+import com.example.Project.repository.AdminRepository;
+import com.example.Project.entity.Admin;
 
 /**
  * Service implementation class for managing Admin entities.
@@ -14,6 +14,11 @@ public class AdminServiceImplementation implements AdminService {
 
     @Autowired
     private AdminRepository adminRepository;
+
+    //@Autowired
+    //public AdminServiceImplementation(AdminRepository adminRepository){
+       // this.adminRepository = adminRepository;
+    //}
 
     /**
      * Retrieves all admins.

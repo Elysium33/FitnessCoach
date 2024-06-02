@@ -1,11 +1,10 @@
-package com.example.Project.Service;
+package com.example.Project.service;
 
-import com.example.Project.ObserverService.AdminObserver;
-import com.example.Project.ObserverService.ClientObserver;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.Project.observerService.AdminObserver;
+import com.example.Project.observerService.ClientObserver;
 import org.springframework.stereotype.Service;
-import com.example.Project.Repository.ClientRepository;
-import com.example.Project.Entity.Client;
+import com.example.Project.repository.ClientRepository;
+import com.example.Project.entity.Client;
 
 import java.util.List;
 
@@ -15,14 +14,16 @@ import java.util.List;
 @Service
 public class ClientServiceImplementation implements ClientService {
 
-    @Autowired
+    //@Autowired
     private ClientRepository clientRepository;
     private final List<ClientObserver> clientObservers;
     private final List<AdminObserver> adminObservers;
 
-    public ClientServiceImplementation(List<ClientObserver> clientObservers, List<AdminObserver> adminObservers){
+    public ClientServiceImplementation(List<ClientObserver> clientObservers, List<AdminObserver> adminObservers, ClientRepository clientRepository){
         this.clientObservers = clientObservers;
         this.adminObservers = adminObservers;
+        this.clientRepository = clientRepository;
+
     }
 
     /**

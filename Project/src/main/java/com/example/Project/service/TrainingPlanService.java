@@ -1,6 +1,6 @@
-package com.example.Project.Service;
+package com.example.Project.service;
 
-import com.example.Project.Entity.TrainingPlan;
+import com.example.Project.entity.TrainingPlan;
 import java.util.List;
 
 /**

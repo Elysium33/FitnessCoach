@@ -1,10 +1,10 @@
-package com.example.Project.Service;
+package com.example.Project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.example.Project.Repository.TrainingPlanRepository;
-import com.example.Project.Entity.TrainingPlan;
+import com.example.Project.repository.TrainingPlanRepository;
+import com.example.Project.entity.TrainingPlan;
 
 /**
  * Service implementation class for managing TrainingPlan entities.
@@ -12,8 +12,11 @@ import com.example.Project.Entity.TrainingPlan;
 @Service
 public class TrainingPlanServiceImplementation implements TrainingPlanService {
 
-    @Autowired
+
     private TrainingPlanRepository trainingPlanRepository;
+    public TrainingPlanServiceImplementation(TrainingPlanRepository trainingPlanRepository){
+        this.trainingPlanRepository = trainingPlanRepository;
+    }
 
     /**
      * Retrieves all training plans.

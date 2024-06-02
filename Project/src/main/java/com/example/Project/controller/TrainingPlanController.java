@@ -1,11 +1,11 @@
-package com.example.Project.Controller;
+package com.example.Project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.Project.Entity.TrainingPlan;
-import com.example.Project.Service.TrainingPlanService;
+import com.example.Project.entity.TrainingPlan;
+import com.example.Project.service.TrainingPlanService;
 
 import java.util.List;
 

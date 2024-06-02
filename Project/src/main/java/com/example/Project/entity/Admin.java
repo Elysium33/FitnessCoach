@@ -1,7 +1,7 @@
-package com.example.Project.Entity;
+package com.example.Project.entity;
 
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 /**
  * Represents an admin entity in the project.
  * This class is annotated as an entity for persistence.
